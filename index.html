@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prakash S | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+/* HOME */
+.home {
+    height: 100vh;
+    background: url('home-bg.jpg') no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content {
+    color: white;
+}
+
+h1 {
+    font-size: 60px;
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    from { color: white; }
+    to { color: #00c3ff; }
+}
+
+p {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* ABOUT */
+.about {
+    padding: 100px 20px;
+    background: url('about-bg.jpg') no-repeat center/cover;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+}
+
+/* SKILLS */
+.skills {
+    padding: 80px 20px;
+    text-align: center;
+    background: #020c1b;
+    color: white;
+}
+
+.skill-box {
+    display: inline-block;
+    padding: 15px 25px;
+    margin: 10px;
+    background: #0a192f;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.skill-box:hover {
+    background: #00c3ff;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* CERTIFICATES */
+.certificates {
+    padding: 80px 20px;
+    text-align: center;
+    background: #020c1b;
+    color: white;
+}
+
+.cert-box {
+    display: inline-block;
+    margin: 15px;
+    padding: 20px 30px;
+    background: #0a192f;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.cert-box a {
+    color: #00c3ff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.cert-box:hover {
+    background: #00c3ff;
+    transform: scale(1.1);
+}
+
+.cert-box:hover a {
+    color: black;
+}
+
+/* CONTACT */
+.contact {
+    padding: 80px 20px;
+    text-align: center;
+    background: black;
+    color: white;
+}
+
+.contact a {
+    display: block;
+    margin: 10px;
+    color: #00c3ff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- HOME -->
+<section class="home">
+    <div class="content">
+        <h1>Prakash S</h1>
+        <p>Computer Science (AI) Student | C & C++ Developer</p>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+    <div class="about-content">
+        <h2>About Me</h2>
+        <p>
+            I am a Computer Science (Artificial Intelligence) student passionate about 
+            software development, data structures, and AI. I enjoy building projects, 
+            solving problems, and continuously improving my skills.
+        </p>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills">
+    <h2>Skills</h2>
+    <div class="skill-box">C Programming</div>
+    <div class="skill-box">C++</div>
+    <div class="skill-box">Python</div>
+    <div class="skill-box">Data Structures</div>
+    <div class="skill-box">OOP</div>
+    <div class="skill-box">Git & GitHub</div>
+</section>
+
+<!-- CERTIFICATES -->
+<section class="certificates">
+    <h2>Certificates</h2>
+
+    <div class="cert-box">
+        <a href="ciscocertificate.pdf" target="_blank">Cisco Certificate</a>
+    </div>
+
+    <div class="cert-box">
+        <a href="eCertificate.pdf" target="_blank">Oracle Certificate</a>
+    </div>
+
+    <div class="cert-box">
+        <a href="gdl_certificate.pdf" target="_blank">Deep Learning Certificate</a>
+    </div>
+
+    <div class="cert-box">
+        <a href="gml_certificate.pdf" target="_blank">Machine Learning Certificate</a>
+    </div>
+
+    <div class="cert-box">
+        <a href="jp_morgan_certificate.pdf" target="_blank">JP Morgan Certificate</a>
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+    <h2>Contact Me</h2>
+
+    <a href="mailto:s.prakash25804@gmail.com">📧 Email Me</a>
+    <a href="https://github.com/PRAKASH25804" target="_blank">💻 GitHub</a>
+    <a href="https://www.linkedin.com/in/prakash-s-a068b3374/" target="_blank">🔗 LinkedIn</a>
+
+</section>
+
+</body>
+</html>
