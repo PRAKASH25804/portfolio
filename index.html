@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakash S | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #64ffda;
+            --primary-bg: #0a192f;
+            --secondary-bg: #112240;
+            --text-main: #ccd6f6;
+            --text-dim: #8892b0;
+            --nav-height: 80px;
+            --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            color: white;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .logo {
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* SECTION COMMON */
+        section {
+            padding: 100px 10%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 300px;
+            height: 1px;
+            background: var(--text-dim);
+            margin-left: 20px;
+            opacity: 0.3;
+        }
+
+        /* HOME */
+        .home {
+            background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), url('home-bg.jpg') no-repeat center/cover;
+            text-align: left;
+        }
+
+        .home-content h1 {
+            font-size: clamp(40px, 8vw, 80px);
+            margin-bottom: 20px;
+        }
+
+        .home-content p {
+            color: var(--primary);
+            font-size: 18px;
+            font-family: 'Outfit', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        /* ABOUT */
+        .about {
+            background: var(--primary-bg);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-dim);
+            margin-bottom: 20px;
+        }
+
+        .about-img {
+            width: 100%;
+            max-width: 300px;
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            padding: 10px;
+            transition: var(--transition);
+        }
+
+        .about-img:hover {
+            transform: translate(-5px, -5px);
+        }
+
+        /* PROJECTS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--secondary-bg);
+            padding: 25px;
+            border-radius: 4px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: var(--text-dim);
+            margin-bottom: 20px;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-tag {
+            background: var(--secondary-bg);
+            color: var(--primary);
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 14px;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            background: rgba(100, 255, 218, 0.1);
+            transform: scale(1.05);
+        }
+
+        /* CERTIFICATES */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-item {
+            background: var(--secondary-bg);
+            padding: 20px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .cert-item:hover {
+            transform: translateX(10px);
+        }
+
+        .cert-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+            min-height: 60vh;
+        }
+
+        .contact h2::after {
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .contact-links {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: var(--text-main);
+            font-size: 24px;
+            text-decoration: none;
+            transition: var(--transition);
+            padding: 10px 20px;
+            border: 1px solid var(--primary);
+            border-radius: 4px;
+        }
+
+        .contact-links a:hover {
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+
+        /* REVEAL ANIMATION */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 80px 5%;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#" class="logo">Prakash S</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+            <a href="Prakash_S_Resume_Updated.pdf" class="skill-tag" style="padding: 8px 15px; margin-left: 15px;" download>Resume</a>
+        </div>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home" class="home">
+        <div class="home-content reveal">
+            <p>Hi, my name is</p>
+            <h1>Prakash S.</h1>
+            <h2 style="color: var(--text-dim); margin-top: -20px; font-size: clamp(30px, 5vw, 50px);">I build things for
+                the future.</h2>
+            <p style="max-width: 600px; margin-top: 20px; color: var(--text-dim);">
+                I am a Computer Science (Artificial Intelligence) student specializing in
+                C++ development and AI-driven solutions. Currently focused on building
+                efficient, scalable systems.
+            </p>
+            <div style="margin-top: 30px;">
+                <a href="Prakash_S_Resume_Updated.pdf" class="skill-tag" style="padding: 12px 25px; text-decoration: none;"
+                    download>Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <h2 class="reveal">About Me</h2>
+        <div class="about-grid reveal">
+            <div class="about-text">
+                <p>
+                    I am deeply passionate about software development and Artificial Intelligence.
+                    My journey in tech is driven by a curiosity to understand how complex systems
+                    work and an ambition to build tools that solve real-world problems.
+                </p>
+                <p>
+                    With a strong foundation in Data Structures and Object-Oriented Programming,
+                    I enjoy tackling challenging problems and continuously expanding my technical toolkit.
+                </p>
+                <div style="margin-top: 20px;">
+                    <h3 style="font-size: 18px; color: var(--primary); margin-bottom: 10px;">Languages</h3>
+                    <div style="display: flex; gap: 15px;">
+                        <span class="skill-tag" style="font-size: 12px; padding: 5px 10px;">Tamil (Native)</span>
+                        <span class="skill-tag" style="font-size: 12px; padding: 5px 10px;">English
+                            (Professional)</span>
+                        <span class="skill-tag" style="font-size: 12px; padding: 5px 10px;">Japanese (Beginner)</span>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <div class="skill-tag" style="padding: 40px; font-size: 24px;">AI & C++</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+        <h2 class="reveal">Featured Projects</h2>
+        <div class="projects-grid reveal">
+            <div class="project-card">
+                <img src="C:\Users\shari\.gemini\antigravity\brain\271bb37f-bba5-4ef0-bcbc-e0090636091e\airline_system_thumbnail_1775408510377.png"
+                    alt="Airline Reservation System">
+                <h3>Airline Reservation System</h3>
+                <p>
+                    Developed a complete airline booking system using HTML, CSS, and JavaScript with localStorage as a
+                    mock database. Implemented features including authentication, flight search, seat selection,
+                    passenger management, payment simulation, and boarding pass generation with QR code.
+                    Designed an admin dashboard for bookings and revenue.
+                </p>
+                <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+                    <span class="skill-tag" style="padding: 5px 10px; font-size: 12px;">HTML</span>
+                    <span class="skill-tag" style="padding: 5px 10px; font-size: 12px;">CSS</span>
+                    <span class="skill-tag" style="padding: 5px 10px; font-size: 12px;">JavaScript</span>
+                    <span class="skill-tag" style="padding: 5px 10px; font-size: 12px;">localStorage</span>
+                </div>
+                <a href="https://github.com/PRAKASH25804/airline-reservation-system" target="_blank" class="skill-tag"
+                    style="text-decoration: none; padding: 8px 15px; border-color: var(--primary);">View on GitHub ↗</a>
+            </div>
+            <!-- Add more project cards here in the future -->
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills">
+        <h2 class="reveal">Technical Skills</h2>
+        <div class="skills-grid reveal">
+            <div class="skill-tag">Programming: C, C++, Python</div>
+            <div class="skill-tag">Data Structures & Algorithms</div>
+            <div class="skill-tag">Object-Oriented Programming</div>
+            <div class="skill-tag">AI & Machine Learning Fundamentals</div>
+            <div class="skill-tag">Git & GitHub</div>
+            <div class="skill-tag">Problem Solving & Logical Thinking</div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="certificates">
+        <h2 class="reveal">Certifications</h2>
+        <div class="certs-grid reveal">
+            <div class="cert-item">
+                <span>MathWorks – MATLAB Fundamentals</span>
+                <a href="#" target="_blank">View ↗</a>
+            </div>
+            <div class="cert-item">
+                <span>NPTEL – Programming & Computer Science</span>
+                <a href="#" target="_blank">View ↗</a>
+            </div>
+            <div class="cert-item">
+                <span>Coursera – Data Science, AI & Programming</span>
+                <a href="#" target="_blank">View ↗</a>
+            </div>
+            <div class="cert-item">
+                <span>HP Foundation – AI for Beginners</span>
+                <a href="#" target="_blank">View ↗</a>
+            </div>
+            <div class="cert-item">
+                <span>Virtual Job Simulations (AWS, Siemens...)</span>
+                <a href="#" target="_blank">View ↗</a>
+            </div>
+            <div class="cert-item">
+                <span>Oracle Certificate</span>
+                <a href="eCertificate.pdf" target="_blank">View ↗</a>
+            </div>
+            <div class="cert-item">
+                <span>Cisco Certificate</span>
+                <a href="ciscocertificate.pdf" target="_blank">View ↗</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <h2 class="reveal">Get In Touch</h2>
+        <p class="reveal" style="color: var(--text-dim); max-width: 500px; margin: 0 auto 30px;">
+            I'm currently looking for new opportunities and my inbox is always open.
+            Whether you have a question or just want to say hi, I'll try my best to get back to you!
+        </p>
+        <div class="contact-links reveal">
+            <a href="mailto:s.prakash25804@gmail.com">📧 Email</a>
+            <a href="https://github.com/PRAKASH25804" target="_blank">💻 GitHub</a>
+            <a href="https://www.linkedin.com/in/prakash-s-a068b3374/" target="_blank">🔗 LinkedIn</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Designed & Built by Prakash S &copy; 2026</p>
+    </footer>
+
+    <script>
+        // Reveal animations on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // Smooth scroll for nav links (handled by CSS, but good for JS fallback)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
